@@ -50,6 +50,7 @@ private:
 	string city;
 	string zip;
 	string phone;
+	string im;
 
 };
 
@@ -78,4 +79,6 @@ int main()
 
     return 0;
 }
-// testing git
+// testing git  is really something
+
+
