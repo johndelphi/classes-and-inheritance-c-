@@ -33,7 +33,7 @@ The customerNumber variable will be used to hold a unique integer for each custo
 It will be set to true if the customer wishes to be on a mailing list, or false if the customer does not wish to be on a mailing list.
 Write appropriate accessor and mutator functions for these member variables. Demonstrate an object of the CustomerData class in a simple program.*/
 #include <iostream>
-#include <vector>
+
 using namespace std;
 
 class PersonData
@@ -44,15 +44,15 @@ public:
 	void setLastName();
 	string getLastName()const;
 	string getCity()const;
-	void setCity(string);
+	void setCity();
 	void setZip();
 	string getZip()const;
 	void getPhone()const;
-	vector<string>getAddress()const;
-	vector<string>setAddress();
+	void Addreses()const;
 	string setPhone(string);
-
-
+	
+	
+	
 
 	PersonData();
 	~PersonData();
@@ -60,13 +60,13 @@ public:
 private:
 	string lastName;
 	string firstName;
-	vector<string> Address;
+	string Addreses[4];
 	string state;
 	string city;
 	string zip;
 	string phone;
-	
 
+	
 };
 
 PersonData::PersonData() // constructor
@@ -98,7 +98,7 @@ cin >>firstName;
 }
 string PersonData::getFirstName() const
 {
-	cout << firstName;
+	
 	return firstName;
 }
 
@@ -110,13 +110,32 @@ void PersonData::setLastName()
 
 string PersonData::getLastName() const
 {
+
 	return lastName;
+
 }
+
+string PersonData::getCity() const
+{
+	return city;
+}
+
+void PersonData::setCity()
+{
+	cout << "Please enter the name of the city you are located" << endl;
+	cin >> city;
+}
+
 
 int main()
 {
 	customer john;
-	john.setFirstName(),john.getFirstName();
+	john.setFirstName(),
+		john.setLastName(),
+		john.setCity();   
 	
-	return 0;
+	cout << "-------------------------------------------------------------------------------" << endl;
+	cout << "FirstName:" << "      " << john.getFirstName() << endl;
+	cout << "lastName :" << "      " << john.getLastName() << endl;
+	cout << "city:     " << "       " << john.getCity() << endl;
 }
