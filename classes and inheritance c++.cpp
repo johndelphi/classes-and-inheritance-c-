@@ -5,7 +5,7 @@ Course 1437 2803
 Date 10/08/2020
 
 Assignment Description 
-/*Design a class named PersonData with the following member variables:
+/*Design  class named PersonData with the following member variables:
 
 lastName
 
@@ -23,7 +23,8 @@ phone
 
 Write the  functions for these member variables.
 
-Next, design a class named CustomerData, which is derived from the PersonData class. The CustomerData class should have the following member variables:
+Next, design a class named CustomerData, which is derived from the PersonData class. 
+The CustomerData class should have the following member variables:
 
 customerNumber
 
@@ -33,12 +34,12 @@ The customerNumber variable will be used to hold a unique integer for each custo
 It will be set to true if the customer wishes to be on a mailing list, or false if the customer does not wish to be on a mailing list.
 Write appropriate accessor and mutator functions for these member variables. Demonstrate an object of the CustomerData class in a simple program.*/
 #include <iostream>
-
 using namespace std;
-
 class PersonData
 {
 public:
+	void setMailingStatus();
+	string getMailStatus();
 	void setFirstName();
 	string getFirstName()const;// accesor
 	void setLastName();
@@ -47,26 +48,23 @@ public:
 	void setCity();
 	void setZip();
 	string getZip()const;
-	void getPhone()const;
-	void Addreses()const;
-	string setPhone(string);
-	
-	
-	
-
+	string getPhone()const;
+	void getAddreses( )const;
+	string setPhone();
+	string setAddress(string, string);
 	PersonData();
 	~PersonData();
 
 private:
 	string lastName;
 	string firstName;
-	string Addreses[4];
+	string Addreses;
 	string state;
 	string city;
 	string zip;
 	string phone;
-
-	
+	string Id;
+	bool mailist;
 };
 
 PersonData::PersonData() // constructor
@@ -104,7 +102,7 @@ string PersonData::getFirstName() const
 
 void PersonData::setLastName()
 {
-	cout << "please type in your last Name:<<""<<\n";
+	cout << "please type in your last Name:" <<"\n";
 	cin >>  lastName;
 }
 
@@ -126,16 +124,38 @@ void PersonData::setCity()
 	cin >> city;
 }
 
+void PersonData::setZip()
+{
+	cout << "what is your zip  " << firstName<<" ?:" << endl;
+	cin >> zip;
+}
 
+string PersonData::getZip() const
+{
+	return zip;
+}
+
+string PersonData::getPhone() const
+{
+	return phone;
+}
+
+string PersonData::setPhone() {
+	cout << "please enter your number";
+	cin>> phone;
+
+}
 int main()
 {
 	customer john;
 	john.setFirstName(),
 		john.setLastName(),
-		john.setCity();   
-	
+		john.setCity();
+	john.setZip();
+
 	cout << "-------------------------------------------------------------------------------" << endl;
 	cout << "FirstName:" << "      " << john.getFirstName() << endl;
 	cout << "lastName :" << "      " << john.getLastName() << endl;
-	cout << "city:     " << "       " << john.getCity() << endl;
+	cout <<  "city    :" << "      " << john.getCity() << endl;
+	cout << "zip      :" << "      " << john.getZip() << endl;
 }
