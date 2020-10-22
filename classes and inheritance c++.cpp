@@ -64,7 +64,7 @@ private:
 	string zip;
 	string phone;
 	string Id;
-	bool mailist;
+	bool mailist;//maan
 };
 
 PersonData::PersonData() // constructor
